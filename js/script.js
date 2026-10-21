@@ -101,5 +101,44 @@ rightWall.position.y = 3;
 
 scene.add(rightWall);
 
-// Draw the scene
-renderer.render(scene, camera);
+// WASD movement
+const keys = {};
+
+document.addEventListener("keydown", function(event) {
+    keys[event.key.toLowerCase()] = true;
+});
+
+document.addEventListener("keyup", function(event) {
+    keys[event.key.toLowerCase()] = false;
+});
+
+// Animate the scene
+function animate() {
+
+    // Move forward
+    if (keys["w"]) {
+        camera.position.z -= 0.1;
+    }
+
+    // Move backward
+    if (keys["s"]) {
+        camera.position.z += 0.1;
+    }
+
+    // Move left
+    if (keys["a"]) {
+        camera.position.x -= 0.1;
+    }
+
+    // Move right
+    if (keys["d"]) {
+        camera.position.x += 0.1;
+    }
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+

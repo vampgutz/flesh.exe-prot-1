@@ -72,11 +72,11 @@ rightWall.position.y = 3;
 
 scene.add(rightWall);
 
-// Soft pink lighting throughout the room
+// Soft pink lighting (whole room)
 const ambientLight = new THREE.AmbientLight(0xff6688, 1.5);
 scene.add(ambientLight);
 
-// Red light near the center
+// Red light (center)
 const redLight = new THREE.PointLight(0xff4466, 150, 30);
 redLight.position.set(0, 3, 0);
 scene.add(redLight);
@@ -120,7 +120,7 @@ document.addEventListener("keyup", function(event) {
 
 function animate() {
 
- // WASD movement based on camera direction
+ // WASD movement + camera
 const speed = 0.1;
 
 // Forward

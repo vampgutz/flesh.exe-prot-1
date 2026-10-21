@@ -72,11 +72,11 @@ rightWall.position.y = 3;
 
 scene.add(rightWall);
 
-// lighting
+// Soft pink lighting throughout the room
 const ambientLight = new THREE.AmbientLight(0xff6688, 1.5);
 scene.add(ambientLight);
 
-// lighting
+// Red light near the center
 const redLight = new THREE.PointLight(0xff0033, 80, 20);
 redLight.position.set(0, 3, 0);
 scene.add(redLight);

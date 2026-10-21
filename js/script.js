@@ -77,7 +77,7 @@ const ambientLight = new THREE.AmbientLight(0xff6688, 1.5);
 scene.add(ambientLight);
 
 // Red light near the center
-const redLight = new THREE.PointLight(0xff0033, 80, 20);
+const redLight = new THREE.PointLight(0xff4466, 150, 30);
 redLight.position.set(0, 3, 0);
 scene.add(redLight);
 

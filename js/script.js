@@ -39,5 +39,25 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 
+// Create the floor
+const floorGeometry = new THREE.PlaneGeometry(20, 20);
+
+const floorMaterial = new THREE.MeshBasicMaterial({
+    color: 0x4a101c,
+    side: THREE.DoubleSide
+});
+
+const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+
+// Lay the floor flat
+floor.rotation.x = -Math.PI / 2;
+
+// Move the floor below the cube
+floor.position.y = -2;
+
+// Add the floor to the scene
+scene.add(floor);
+
+
 // Draw the scene
 renderer.render(scene, camera);

@@ -72,6 +72,15 @@ rightWall.position.y = 3;
 
 scene.add(rightWall);
 
+// lighting
+const ambientLight = new THREE.AmbientLight(0xff6688, 1.5);
+scene.add(ambientLight);
+
+// lighting
+const redLight = new THREE.PointLight(0xff0033, 80, 20);
+redLight.position.set(0, 3, 0);
+scene.add(redLight);
+
 // Mouse controls
 let yaw = 0;
 let pitch = 0;

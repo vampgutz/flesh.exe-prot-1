@@ -59,5 +59,22 @@ floor.position.y = -2;
 scene.add(floor);
 
 
+// Create the back wall
+const wallGeometry = new THREE.PlaneGeometry(20, 10);
+
+const wallMaterial = new THREE.MeshBasicMaterial({
+    color: 0x300812,
+    side: THREE.DoubleSide
+});
+
+const backWall = new THREE.Mesh(wallGeometry, wallMaterial);
+
+// Position the wall behind the cube
+backWall.position.z = -10;
+backWall.position.y = 3;
+
+// Add the wall to the scene
+scene.add(backWall);
+
 // Draw the scene
 renderer.render(scene, camera);

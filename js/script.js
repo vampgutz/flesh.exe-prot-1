@@ -30,7 +30,7 @@ scene.add(cube);
 // floor
 const floorGeometry = new THREE.PlaneGeometry(20, 20);
 
-const floorMaterial = new THREE.MeshBasicMaterial({
+const floorMaterial = new THREE.MeshStandardMaterial({
     color: 0x4a101c,
     side: THREE.DoubleSide
 });

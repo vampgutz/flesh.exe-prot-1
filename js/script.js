@@ -26,5 +26,18 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Add the renderer to the page
 document.body.appendChild(renderer.domElement);
 
+// Create a red cube
+const geometry = new THREE.BoxGeometry(2, 2, 2);
+
+const material = new THREE.MeshBasicMaterial({
+    color: 0x990033
+});
+
+const cube = new THREE.Mesh(geometry, material);
+
+// Add the cube to the scene
+scene.add(cube);
+
+
 // Draw the scene
 renderer.render(scene, camera);

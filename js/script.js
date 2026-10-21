@@ -76,5 +76,30 @@ backWall.position.y = 3;
 // Add the wall to the scene
 scene.add(backWall);
 
+// Create the left wall
+const leftWall = new THREE.Mesh(wallGeometry, wallMaterial);
+
+// Turn it sideways
+leftWall.rotation.y = Math.PI / 2;
+
+// Position it on the left side
+leftWall.position.x = -10;
+leftWall.position.y = 3;
+
+scene.add(leftWall);
+
+
+// Create the right wall
+const rightWall = new THREE.Mesh(wallGeometry, wallMaterial);
+
+// Turn it sideways
+rightWall.rotation.y = Math.PI / 2;
+
+// Position it on the right side
+rightWall.position.x = 10;
+rightWall.position.y = 3;
+
+scene.add(rightWall);
+
 // Draw the scene
 renderer.render(scene, camera);

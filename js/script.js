@@ -1,13 +1,9 @@
 
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 
-// Create the scene
 const scene = new THREE.Scene();
-
-// Set the background color
 scene.background = new THREE.Color(0x080508);
 
-// Create the camera
 const camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -15,18 +11,13 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 
-// Move the camera backward
+
 camera.position.z = 8;
-
-// Create the renderer
 const renderer = new THREE.WebGLRenderer();
-
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-// Add the renderer to the page
 document.body.appendChild(renderer.domElement);
 
-// Create a red cube
+// cube stsnd in
 const geometry = new THREE.BoxGeometry(2, 2, 2);
 
 const material = new THREE.MeshBasicMaterial({
@@ -34,12 +25,9 @@ const material = new THREE.MeshBasicMaterial({
 });
 
 const cube = new THREE.Mesh(geometry, material);
-
-// Add the cube to the scene
 scene.add(cube);
 
-
-// Create the floor
+// floor
 const floorGeometry = new THREE.PlaneGeometry(20, 20);
 
 const floorMaterial = new THREE.MeshBasicMaterial({
@@ -49,17 +37,12 @@ const floorMaterial = new THREE.MeshBasicMaterial({
 
 const floor = new THREE.Mesh(floorGeometry, floorMaterial);
 
-// Lay the floor flat
 floor.rotation.x = -Math.PI / 2;
-
-// Move the floor below the cube
 floor.position.y = -2;
-
-// Add the floor to the scene
 scene.add(floor);
 
 
-// Create the back wall
+// back wall
 const wallGeometry = new THREE.PlaneGeometry(20, 10);
 
 const wallMaterial = new THREE.MeshBasicMaterial({
@@ -68,34 +51,22 @@ const wallMaterial = new THREE.MeshBasicMaterial({
 });
 
 const backWall = new THREE.Mesh(wallGeometry, wallMaterial);
-
-// Position the wall behind the cube
 backWall.position.z = -10;
 backWall.position.y = 3;
-
-// Add the wall to the scene
 scene.add(backWall);
 
-// Create the left wall
+// left wall
 const leftWall = new THREE.Mesh(wallGeometry, wallMaterial);
-
-// Turn it sideways
 leftWall.rotation.y = Math.PI / 2;
-
-// Position it on the left side
 leftWall.position.x = -10;
 leftWall.position.y = 3;
 
 scene.add(leftWall);
 
 
-// Create the right wall
+// right wall
 const rightWall = new THREE.Mesh(wallGeometry, wallMaterial);
-
-// Turn it sideways
 rightWall.rotation.y = Math.PI / 2;
-
-// Position it on the right side
 rightWall.position.x = 10;
 rightWall.position.y = 3;
 
@@ -112,7 +83,6 @@ document.addEventListener("keyup", function(event) {
     keys[event.key.toLowerCase()] = false;
 });
 
-// Animate the scene
 function animate() {
 
     // Move forward

@@ -85,7 +85,7 @@ scene.add(redLight);
 let yaw = 0;
 let pitch = 0;
 
-// Click the game to control the mouse
+// click in & out of tab for mouse cam
 renderer.domElement.addEventListener("click", function() {
     renderer.domElement.requestPointerLock();
 });

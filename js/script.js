@@ -147,6 +147,20 @@ if (keys["d"]) {
     camera.position.z -= Math.sin(yaw) * speed;
 }
 
+    // check player distance 
+const distance = camera.position.distanceTo(cube.position);
+
+// int msg
+const interactionMessage = document.getElementById("interactionMessage");
+
+// Show message when close to the computer
+if (distance < 5) {
+    interactionMessage.style.display = "block";
+} else {
+    interactionMessage.style.display = "none";
+}
+
+
     renderer.render(scene, camera);
 
     requestAnimationFrame(animate);

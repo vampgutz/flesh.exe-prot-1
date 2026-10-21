@@ -72,6 +72,32 @@ rightWall.position.y = 3;
 
 scene.add(rightWall);
 
+// Mouse controls
+let yaw = 0;
+let pitch = 0;
+
+// Click the game to control the mouse
+renderer.domElement.addEventListener("click", function() {
+    renderer.domElement.requestPointerLock();
+});
+
+// Move the camera with the mouse
+document.addEventListener("mousemove", function(event) {
+
+    if (document.pointerLockElement === renderer.domElement) {
+
+        yaw -= event.movementX * 0.002;
+        pitch -= event.movementY * 0.002;
+
+        // Stop the camera from looking too far up or down
+        pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, pitch));
+
+        camera.rotation.order = "YXZ";
+        camera.rotation.y = yaw;
+        camera.rotation.x = pitch;
+    }
+});
+
 // WASD movement
 const keys = {};
 

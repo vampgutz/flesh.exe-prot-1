@@ -111,25 +111,32 @@ document.addEventListener("keyup", function(event) {
 
 function animate() {
 
-    // Move forward
-    if (keys["w"]) {
-        camera.position.z -= 0.1;
-    }
+ // WASD movement based on camera direction
+const speed = 0.1;
 
-    // Move backward
-    if (keys["s"]) {
-        camera.position.z += 0.1;
-    }
+// Forward
+if (keys["w"]) {
+    camera.position.x -= Math.sin(yaw) * speed;
+    camera.position.z -= Math.cos(yaw) * speed;
+}
 
-    // Move left
-    if (keys["a"]) {
-        camera.position.x -= 0.1;
-    }
+// Backward
+if (keys["s"]) {
+    camera.position.x += Math.sin(yaw) * speed;
+    camera.position.z += Math.cos(yaw) * speed;
+}
 
-    // Move right
-    if (keys["d"]) {
-        camera.position.x += 0.1;
-    }
+// Left
+if (keys["a"]) {
+    camera.position.x -= Math.cos(yaw) * speed;
+    camera.position.z += Math.sin(yaw) * speed;
+}
+
+// Right
+if (keys["d"]) {
+    camera.position.x += Math.cos(yaw) * speed;
+    camera.position.z -= Math.sin(yaw) * speed;
+}
 
     renderer.render(scene, camera);
 

@@ -24,3 +24,21 @@ p {
 canvas {
     display: block;
 }
+
+
+#interactionMessage {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #ff6688;
+    background-color: #200810;
+    border: 1px solid #ff6688;
+    padding: 15px;
+
+    font-family: monospace;
+    z-index: 10;
+}
+

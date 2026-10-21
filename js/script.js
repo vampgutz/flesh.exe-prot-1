@@ -45,7 +45,7 @@ scene.add(floor);
 // back wall
 const wallGeometry = new THREE.PlaneGeometry(20, 10);
 
-const wallMaterial = new THREE.MeshBasicMaterial({
+const wallMaterial = new THREE.MeshStandardMaterial({
     color: 0x300812,
     side: THREE.DoubleSide
 });

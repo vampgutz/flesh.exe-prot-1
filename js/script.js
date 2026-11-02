@@ -84,9 +84,13 @@ backWall.rotation.y = -Math.PI / 2;
 
        
 
- // Keep the original proportions, but make the wall wider
-const scale = 18 / size.x;
-backWall.scale.set(scale, scale, scale);
+        
+backWall.scale.set(
+    20 / size.x,
+    10 / size.y,
+    20 / size.x
+);
+
 
 
 

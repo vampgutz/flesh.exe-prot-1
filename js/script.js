@@ -53,10 +53,46 @@ const wallMaterial = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide
 });
 
-const backWall = new THREE.Mesh(wallGeometry, wallMaterial);
-backWall.position.z = -10;
-backWall.position.y = 3;
-scene.add(backWall);
+
+// Load the sculpted back wall
+const loader = new GLTFLoader();
+
+loader.load(
+    "models/flesh_wall_colored.glb",
+    function(model) {
+        const backWall = model.scene;
+
+        // Resize the model to fit the back wall area
+        const box = new THREE.Box3().setFromObject(backWall);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+
+        backWall.scale.set(
+            20 / size.x,
+            10 / size.y,
+            1
+        );
+
+        // Place the wall at the back of the room
+        const newBox = new THREE.Box3().setFromObject(backWall);
+        const center = new THREE.Vector3();
+        newBox.getCenter(center);
+
+        backWall.position.set(
+            -center.x,
+            3 - center.y,
+            -10 - center.z
+        );
+
+        scene.add(backWall);
+    },
+    undefined,
+    function(error) {
+        console.error("Wall model could not load:", error);
+    }
+);
+
+
 
 // left wall
 const leftWall = new THREE.Mesh(wallGeometry, wallMaterial);

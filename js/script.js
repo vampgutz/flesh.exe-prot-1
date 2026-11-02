@@ -136,7 +136,10 @@ document.addEventListener("keyup", function(event) {
 function animate() {
 
  // WASD movement + camera
-const speed = 0.1;
+const dialogueOpen =
+    document.getElementById("dialogueBox").style.display === "block";
+
+const speed = dialogueOpen ? 0 : 0.1;
 
 // Forward
 if (keys["w"]) {

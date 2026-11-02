@@ -99,11 +99,14 @@ backWall.scale.set(
         const center = new THREE.Vector3();
         newBox.getCenter(center);
 
-        backWall.position.set(
-            -center.x,
-            3 - center.y,
-            -10 - center.z
-        );
+
+backWall.position.set(
+    -center.x,
+    3 - center.y,
+    -10 - center.z
+);
+
+
 
         scene.add(backWall);
     },

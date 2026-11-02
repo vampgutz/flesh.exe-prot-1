@@ -212,10 +212,15 @@ document.getElementById("question2").onclick = function() {
         "Somewhere you were never meant to find.";
 };
 
+
 document.getElementById("question3").onclick = function() {
     document.getElementById("computerResponse").textContent =
         "Leave? How amusing.";
+
+    // Trigger a bright red flash for half a second
+    flashEndTime = Date.now() + 500;
 };
+
 
 /* Close the dialogue box */
 

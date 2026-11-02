@@ -200,6 +200,29 @@ if (distance < 5 && !dialogueOpen) {
 animate();
 
 
+ // Typing animation for the flesh computer
+let typingTimer;
+
+function typeText(message) {
+    const response = document.getElementById("computerResponse");
+
+    clearInterval(typingTimer);
+    response.textContent = "";
+
+    let i = 0;
+
+    typingTimer = setInterval(function() {
+        response.textContent += message[i];
+        i++;
+
+        if (i >= message.length) {
+            clearInterval(typingTimer);
+        }
+    }, 40);
+}
+
+
+
 /* Dialogue question responses */
 
 document.getElementById("question1").onclick = function() {

@@ -179,7 +179,7 @@ if (distance < 5 && !dialogueOpen) {
     interactionMessage.style.display = "none";
 }
 
-
+redLight.intensity = 120 + Math.sin(Date.now() * 0.002) * 30;
 
     renderer.render(scene, camera);
 

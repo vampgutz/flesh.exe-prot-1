@@ -80,7 +80,7 @@ loader.load(
 
         backWall.position.set(
             -center.x,
-            3 - center.y,
+            1 - center.y,
             -10 - center.z
         );
 

@@ -54,6 +54,13 @@ const wallMaterial = new THREE.MeshStandardMaterial({
 });
 
 
+ // Original back wall behind the sculpt
+const baseBackWall = new THREE.Mesh(wallGeometry, wallMaterial);
+baseBackWall.position.z = -10.5;
+baseBackWall.position.y = 3;
+scene.add(baseBackWall);
+
+
 // Load the sculpted back wall
 const loader = new GLTFLoader();
 

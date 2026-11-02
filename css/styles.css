@@ -66,11 +66,19 @@ canvas {
     color: #ff4466;
 }
 
+
 /* Computer's response */
 #computerResponse {
-    margin: 20px 0;
+    display: block;
+    margin: 20px 0 25px 0;
+    padding: 10px;
     color: #ffb3c6;
+    line-height: 1.6;
+    min-height: 30px;
+    height: auto;
+    position: static;
 }
+
 
 /* Question buttons */
 #dialogueBox button {

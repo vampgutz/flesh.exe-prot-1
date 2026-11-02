@@ -129,7 +129,9 @@ rightWall.position.y = 3;
 scene.add(rightWall);
 
 // Soft pink lighting (whole room)
-const ambientLight = new THREE.AmbientLight(0xff6688, 1.5);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+
 scene.add(ambientLight);
 
 // Red light (center)

@@ -171,12 +171,14 @@ const distance = camera.position.distanceTo(cube.position);
 // int msg
 const interactionMessage = document.getElementById("interactionMessage");
 
-// Show message when close to the computer
-if (distance < 5) {
+
+// Show the interaction prompt only when not talking
+if (distance < 5 && !dialogueOpen) {
     interactionMessage.style.display = "block";
 } else {
     interactionMessage.style.display = "none";
 }
+
 
 
     renderer.render(scene, camera);

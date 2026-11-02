@@ -58,7 +58,7 @@ const wallMaterial = new THREE.MeshStandardMaterial({
 const baseBackWall = new THREE.Mesh(wallGeometry, wallMaterial);
 baseBackWall.position.z = -10.5;
 baseBackWall.position.y = 3;
-scene.add(baseBackWall);
+// scene.add(baseBackWall);
 
 
 // Load the sculpted back wall

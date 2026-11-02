@@ -69,6 +69,10 @@ loader.load(
     function(model) {
         const backWall = model.scene;
 
+        
+backWall.rotation.y = Math.PI;
+
+
         // Resize the model to fit the back wall area
         const box = new THREE.Box3().setFromObject(backWall);
         const size = new THREE.Vector3();

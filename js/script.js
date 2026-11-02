@@ -81,6 +81,9 @@ const redLight = new THREE.PointLight(0xff4466, 150, 30);
 redLight.position.set(0, 3, 0);
 scene.add(redLight);
 
+// Time when the angry flash should end
+let flashEndTime = 0;
+
 // Mouse controls
 let yaw = 0;
 let pitch = 0;

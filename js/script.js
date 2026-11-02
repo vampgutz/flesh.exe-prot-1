@@ -110,9 +110,22 @@ document.addEventListener("mousemove", function(event) {
 // WASD movement
 const keys = {};
 
+
 document.addEventListener("keydown", function(event) {
     keys[event.key.toLowerCase()] = true;
+
+    // Press E to interact with the computer
+    if (event.key.toLowerCase() === "e") {
+
+        // Check how close the player is
+        const distance = camera.position.distanceTo(cube.position);
+
+        if (distance < 5) {
+            alert("FLESH.EXE: What do you want, little thing?");
+        }
+    }
 });
+
 
 document.addEventListener("keyup", function(event) {
     keys[event.key.toLowerCase()] = false;

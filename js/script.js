@@ -121,7 +121,9 @@ document.addEventListener("keydown", function(event) {
         const distance = camera.position.distanceTo(cube.position);
 
         if (distance < 5) {
-            alert("FLESH.EXE: What do you want, little thing?");
+document.exitPointerLock();
+
+document.getElementById("dialogueBox").style.display = "block";
         }
     }
 });

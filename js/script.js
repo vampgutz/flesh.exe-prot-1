@@ -70,7 +70,9 @@ loader.load(
         const backWall = model.scene;
 
         
-backWall.rotation.y = Math.PI;
+
+backWall.rotation.y = Math.PI / 2;
+
 
 
         // Resize the model to fit the back wall area

@@ -83,9 +83,11 @@ backWall.rotation.y = -Math.PI / 2;
         box.getSize(size);
 
        
-// Keep the model's original proportions
-const scale = 10 / Math.max(size.x, size.y, size.z);
+
+ // Keep the original proportions, but make the wall wider
+const scale = 18 / Math.max(size.x, size.y, size.z);
 backWall.scale.set(scale, scale, scale);
+
 
 
         // Place the wall at the back of the room

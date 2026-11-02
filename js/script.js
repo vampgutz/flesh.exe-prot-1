@@ -182,7 +182,15 @@ if (distance < 5 && !dialogueOpen) {
     interactionMessage.style.display = "none";
 }
 
-redLight.intensity = 120 + Math.sin(Date.now() * 0.002) * 30;
+
+    // Normal breathing light
+    redLight.intensity = 120 + Math.sin(Date.now() * 0.002) * 30;
+
+    // Flash bright red when the computer gets angry
+    if (Date.now() < flashEndTime) {
+        redLight.intensity = 400;
+    }
+
 
     renderer.render(scene, camera);
 

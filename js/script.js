@@ -74,11 +74,11 @@ loader.load(
         const size = new THREE.Vector3();
         box.getSize(size);
 
-        backWall.scale.set(
-            20 / size.x,
-            10 / size.y,
-            1
-        );
+       
+// Keep the model's original proportions
+const scale = 10 / Math.max(size.x, size.y, size.z);
+backWall.scale.set(scale, scale, scale);
+
 
         // Place the wall at the back of the room
         const newBox = new THREE.Box3().setFromObject(backWall);

@@ -71,7 +71,9 @@ loader.load(
 
         
 
-backWall.rotation.y = Math.PI / 2;
+
+backWall.rotation.y = -Math.PI / 2;
+
 
 
 

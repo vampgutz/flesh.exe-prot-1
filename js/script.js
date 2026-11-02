@@ -101,7 +101,7 @@ backWall.scale.set(
 
         backWall.position.set(
             -center.x,
-            1 - center.y,
+            3 - center.y,
             -10 - center.z
         );
 

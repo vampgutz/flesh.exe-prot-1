@@ -183,3 +183,28 @@ if (distance < 5) {
 
 animate();
 
+
+/* Dialogue question responses */
+
+document.getElementById("question1").onclick = function() {
+    document.getElementById("computerResponse").textContent =
+        "Something far greater than you.";
+};
+
+document.getElementById("question2").onclick = function() {
+    document.getElementById("computerResponse").textContent =
+        "Somewhere you were never meant to find.";
+};
+
+document.getElementById("question3").onclick = function() {
+    document.getElementById("computerResponse").textContent =
+        "Leave? How amusing.";
+};
+
+/* Close the dialogue box */
+
+document.getElementById("closeDialogue").onclick = function() {
+    document.getElementById("dialogueBox").style.display = "none";
+};
+
+
